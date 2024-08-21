@@ -1,113 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="veiwport" content="width-device-width,initial-scale=1.0">
+        <title>y</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href class="logo"
+                style="text-decoration: none; color: black;">Safari Jeep
+                Service-YALA</a>
 
+            <nav class="navbar" style="position: relative; text-align: right;">
+                <a href>Home</a>
+                <a href>About</a>
+                <a href>Photos</a>
+                <a href>Contact</a>
+            </nav>
+        </header>
+        <hr>
+        <div class="photo-bar">
+            <img src="3.jpg" height="50" width="50" class="photo1">
+            <img src="3.jpg" height="50" width="50" class="photo2">
+            <img src="3.jpg" height="50" width="50" class="photo3">
 
+        </div>
+        <div style="color: black;">
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
 
-<main class="grow overflow-hidden">
-                                <div class="flex h-full flex-col">
-                                    <div class="flex flex-1 flex-col justify-between">
-                                        <div class="p-4 @container">
-                                            <div
-                                                class="flex flex-1 flex-col items-start justify-between gap-4 rounded-xl border border-[#d0dbe7] bg-slate-50 p-5 @[480px]:flex-row @[480px]:items-center">
-                                                <div class="flex flex-col gap-1">
-                                                    <p
-                                                        class="text-[#0e141b] text-base font-bold leading-tight">Get
-                                                        paid faster with Instant
-                                                        withdraw</p>
-                                                    <p
-                                                        class="text-[#4e7397] text-base font-normal leading-normal">Transfer
-                                                        your earnings to your debit card
-                                                        instantly for a 1% fee (minimum
-                                                        $0.25,
-                                                        maximum $10).</p>
-                                                </div>
-                                                <button
-                                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#1980e6] text-slate-50text-lg font-bold leading-tight tracking-[-0.015em]">
-                                                    <span class="truncate">Instant Withdraw</span>
-                                                </button>
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                    <!-- Popup1 Window -->
-                                    <div id="popup1" class="popup1">
-                                        <div class="popup1-content">
-                                            <span class="close" id="closePopup1">&times;</span>
-                                            <section class="content">
-                                                <div class="columns">
-                                                    <div id="sidebar"></div>
-                                                    <div id="semicircle">
-                                                        <svg viewBox="0 0 412 1080" version="1.1"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                            <g id="Page-1" stroke="none" stroke-width="1"
-                                                                fill="none" fill-rule="evenodd">
-                                                                <g id="Group" transform="translate(-69.000000, 0.000000)">
-                                                                    <g id="Rectangle-Copy-10" fill-opacity="1">
-                                                                        <use filter="url(#filter-2)"
-                                                                            xlink:href="#path-1"></use>
-                                                                    </g>
-                                                                    <path
-                                                                        d="M0,0 L0,1080 L107.077379,1080 C529.830472,806.915754 563.790352,276.501473 107.077379,8.29024349e-14 L0,0 Z"
-                                                                        id="Path" fill="#000000"></path>
-                                                                </g>
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                                                    <div id="main">
-                                                        <img id="add-card"
-                                                            src="https://storage.googleapis.com/pen-images/creditcard2.png"></img>
-                                                        <img id="main-card"
-                                                            onClick="autoFill()"; src="https://storage.googleapis.com/pen-images/creditcard.png"></img>
-                                                        <img id="other-card"
-                                                            src="https://storage.googleapis.com/pen-images/creditcard2.png"></img>
-                                                        <section id="payment">
-                                                            <section class="row" id="total">
-                                                                <svg width="32" height="32" viewBox="0 0 32 32">
-                                                                    <path
-                                                                        d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z">
-                                                                    </path>
-                                                                </svg>
-                                                                <h2>Total <span class="price">$100<span
-                                                                            class="cents">.00</span></span>
-                                                                </h2>
-                                                            </section>
-                                                            <form>
-                                                                <h1>Payment Details</h1>
-                                                                <div class="form-group">
-                                                                    <label for="name">Cardholder Name</label>
-                                                                    <input type="text" class="form-control" id="name"
-                                                                        aria-describedby="nameHelp" placeholder="Name">
-                                                                    <small id="nameHelp"
-                                                                        class="form-text text-muted">Full name as displayed on card.</small>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="number">Card Number</label>
-                                                                    <input type="text" class="form-control" id="number"
-                                                                        placeholder="Card Number">
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                        <label for="country">Country</label>
-                                                                        <input type="text" id="country" class="form-control"
-                                                                            placeholder="County Name">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <label for="idnum">Acount holder id number</label>
-                                                                        <input type="text" class="form-control" id="idnum"
-                                                                            placeholder="Enter identity number">
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <label for="amount">Amount</label>
-                                                                        <input type="text" id="amount" class="form-control"
-                                                                            placeholder="Amount of Money">
-                                                                    </div>
-                                                                </div>
-                                                                <button type="submit" class="btn">Checkout</button>
-                                                            </form>
-                                                        </section>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </main>
-                            
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Welcome to YALA</h1>
+                    <h2>Yala National Park;SriLanka</h2>
+                    <h3> Join with us for an unforgettable journey...</h3>
+                    <p> Embark on thrilling safaris through expansive
+                        landscapes,<br>encounter majestic animals up
+                        close,<br>and
+                        immerse yourself in the beauty of the natural world.</p>
+                </div>
+
+            </section>
+        </div>
+        <script src="main.js"></script>
+
+    </body>
+</html>
