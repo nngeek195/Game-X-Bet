@@ -10,9 +10,9 @@ body {
     border-radius: 20px;
     padding: 20px; /* Adjust padding to fit your design */
     margin: 20px auto; /* Center the section and add margin */
-    width: 100%;
-    height: auto; /* Adjust width as needed */
-    max-width: 700px; /* Limit maximum width */
+    width: 70%;
+    height: 450px; /* Adjust width as needed */
+    max-width: 800px; /* Limit maximum width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
 }
 
@@ -27,13 +27,13 @@ body {
 /* Grid layout for the form */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem; /* Adjust gap between items */
+    grid-template-columns: 4fr;
+    gap: 1rem; /* Adjust gap between items */
 }
 
 @media (min-width: 640px) {
     .grid-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -41,7 +41,7 @@ body {
 .label {
     display: block;
     font-size: 0.875rem; /* text-sm */
-    font-weight: 600; /* font-semibold */
+    font-weight: 800; /* font-semibold */
     color: #ffffff;
     margin-bottom: 0.5rem; /* mb-2.5 */
 }
@@ -84,6 +84,7 @@ body {
 body {
     font-family: 'Europa', sans-serif;
     background-color: black;
+    height: 900px !important;
 }
 
 h1 {
@@ -135,4 +136,71 @@ h1 {
         clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
         text-shadow: 1px 0 0 blue, -1px 0 0 lime;
     }
+}
+#openpopup {
+    display: none; /* Hide the popup by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.data-saved-successfully {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+  
+  .checkmark {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+  }
+  
+  .message {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    color: #fff;
+    background-color: #4caf50;
+  }
+  .data-saved-successfully {
+    animation: slideUp 0.5s ease-in-out;
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translate(-50%, -100%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+footer{
+    max-height: 40px !important;
 }

@@ -67,7 +67,8 @@
                                 <div
                                     class="flex min-w-[111px] flex-1 basis-[fit-content] flex-col gap-2 rounded-lg border border-[#d0dbe7] p-3 items-center text-center">
                                     <p
-                                        class="text-[#0e141b] tracking-light text-2xl font-bold leading-tight">LKR 100.00</p>
+                                        class="text-[#333] tracking-light text-2xl font-bold leading-tight"><h2 style="color:#333;">Total <span class="price">LKR <span id="balance">00</span><span class="cents">.00</span></span></h2>
+                                    </p>
                                     <div class="flex items-center gap-2"><p
                                             class="text-[#4e7397] text-sm font-normal leading-normal">Available</p></div>
                                 </div>
@@ -120,7 +121,7 @@
                                     
                                     </div>
                                     <!-- Popup Window -->
-                                    <div id="popup" class="popup">
+                                    <div id="popup" class="popup" style="display:none;">
                                         <div class="popup-content">
                                             <span class="close" id="closePopup">&times;</span>
                                             <section class="content">
@@ -128,14 +129,14 @@
                                                     <div id="sidebar"></div>
                                                     <div id="semicircle">
                                                         <svg viewBox="0 0 412 1080" version="1.1"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                             xmlns="http://www.w3.org/2000/svg"
+                                                             xmlns:xlink="http://www.w3.org/1999/xlink">
                                                             <g id="Page-1" stroke="none" stroke-width="1"
-                                                                fill="none" fill-rule="evenodd">
+                                                               fill="none" fill-rule="evenodd">
                                                                 <g id="Group" transform="translate(-69.000000, 0.000000)">
                                                                     <g id="Rectangle-Copy-10" fill-opacity="1">
                                                                         <use filter="url(#filter-2)"
-                                                                            xlink:href="#path-1"></use>
+                                                                             xlink:href="#path-1"></use>
                                                                     </g>
                                                                     <path
                                                                         d="M0,0 L0,1080 L107.077379,1080 C529.830472,806.915754 563.790352,276.501473 107.077379,8.29024349e-14 L0,0 Z"
@@ -146,11 +147,11 @@
                                                     </div>
                                                     <div id="main">
                                                         <img id="add-card"
-                                                            src="https://storage.googleapis.com/pen-images/creditcard2.png"></img>
+                                                             src="https://storage.googleapis.com/pen-images/creditcard2.png"></img>
                                                         <img id="main-card"
-                                                            onClick="autoFill()"; src="https://storage.googleapis.com/pen-images/creditcard.png"></img>
+                                                             onclick="autoFill();" src="https://storage.googleapis.com/pen-images/creditcard.png"></img>
                                                         <img id="other-card"
-                                                            src="https://storage.googleapis.com/pen-images/creditcard2.png"></img>
+                                                             src="https://storage.googleapis.com/pen-images/creditcard2.png"></img>
                                                         <section id="payment">
                                                             <section class="row" id="total">
                                                                 <svg width="32" height="32" viewBox="0 0 32 32">
@@ -158,48 +159,49 @@
                                                                         d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z">
                                                                     </path>
                                                                 </svg>
-                                                                <h2>Total <span class="price">LKR 100<span
-                                                                            class="cents">.00</span></span>
-                                                                </h2>
+                                                                <h2>Maximumly you can deposite LKR 500</h2>
                                                             </section>
-                                                            <form>
+                                                            <form id="depositForm">
                                                                 <h1>Payment Details</h1>
                                                                 <div class="form-group">
                                                                     <label for="name">Cardholder Name</label>
                                                                     <input type="text" class="form-control" id="name"
-                                                                        aria-describedby="nameHelp" placeholder="Name">
+                                                                           aria-describedby="nameHelp" placeholder="Name">
                                                                     <small id="nameHelp"
-                                                                        class="form-text text-muted">Full name as displayed on card.</small>
+                                                                           class="form-text text-muted">Full name as displayed on card.</small>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="number">Card Number</label>
-                                                                    <input type="text" class="form-control" id="number"
-                                                                        placeholder="Card Number">
+                                                                    <input type="number" class="form-control" id="number"
+                                                                           placeholder="Card Number">
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col">
                                                                         <label for="date">Expiry Date</label>
                                                                         <input type="date" class="form-control" id="date"
-                                                                            placeholder="MM/YYYY">
+                                                                               placeholder="MM/YYYY">
                                                                     </div>
                                                                     <div class="col">
                                                                         <label for="cvv">CVV</label>
                                                                         <input type="password" id="cvv" class="form-control"
-                                                                            placeholder="CVV">
+                                                                               placeholder="CVV">
                                                                     </div>
                                                                     <div class="col">
-                                                                        <label for="amount">Amount</label>
-                                                                        <input type="text" id="amount" class="form-control"
-                                                                            placeholder="Amount of Money">
+                                                                        <label for="depositeAmount">Amount</label>
+                                                                        <input type="number" id="depositAmount" class="form-control"
+                                                                               placeholder="Amount of Money">
                                                                     </div>
                                                                 </div>
-                                                                <button type="submit" class="btn">Checkout</button>
+                                                                <button id="checkout" type="button" class="btn">Checkout</button>
                                                             </form>
                                                         </section>
                                                     </div>
                                                 </div>
                                             </section>
                                         </div>
+                                    </div>
+                                    
+                                    <button id="openPopup">Deposit</button>
                                     </div>
                                     <div id="popup1" class="popup1">
                                         <div class="popup1-content">
@@ -239,9 +241,9 @@
                                                                         d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z">
                                                                     </path>
                                                                 </svg>
-                                                                <h2>Total <span class="price">LKR 100<span
-                                                                            class="cents">.00</span></span>
-                                                                </h2>
+                                                                <div id="amount">
+                                                                    <h2>Total Amount Can Withdraw</h2>
+                                                                </div>
                                                             </section>
                                                             <form>
                                                                 <h1>Payment Details</h1>
@@ -254,7 +256,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="number">Card Number</label>
-                                                                    <input type="text" class="form-control" id="number"
+                                                                    <input type="number" class="form-control" id="number"
                                                                         placeholder="Card Number">
                                                                 </div>
                                                                 <div class="row">
@@ -268,14 +270,14 @@
                                                                         <input type="text" id="country" class="form-control"
                                                                             placeholder="Country Name">
                                                                     </div>
-                                                                    <div class="col">
-                                                                        <label for="amount">Amount</label>
-                                                                        <input type="text" id="amount" class="form-control"
-                                                                            placeholder="Amount of Money">
-                                                                    </div>
-                                                                </div>
-                                                                <button type="submit" class="btn">Checkout</button>
-                                                            </form>
+                                                                    <form id="withdrawForm">
+                                                                        <div class="form-group">
+                                                                            <label for="withdrawAmount">Withdrawal Amount</label>
+                                                                            <input type="number" class="form-control" id="withdrawAmount" placeholder="Amount to Withdraw">
+                                                                        </div>
+                                                                        <button id="withdraw" type="button" class="btn">Withdraw</button>
+                                                                    </form>
+                                                                </form>
                                                         </section>
                                                     </div>
                                                 </div>
@@ -319,7 +321,7 @@
                     <footer
                         class="border-t border-solid border-t-[#243647] px-2 py-3 text-black text-lg font-bold leading-tight tracking-[-0.015em]">
                         <p class="text-[#fffff]">© 2024
-                            GameXBet</p>
+                            Game<span class="highlight">X</span>Bet</p>
                     </footer>
                 <script src="scripts.js"></script>
         </body>

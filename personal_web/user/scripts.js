@@ -1,84 +1,76 @@
+// Function to toggle the dropdown menu
 function toggleDropdown(menuId) {
-    const dropdown = document.getElementById(menuId);
-    if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-    } else {
-        dropdown.style.display = "block";
-    }
+  const dropdown = document.getElementById(menuId);
+  if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+  } else {
+      dropdown.style.display = "block";
+  }
 }
+
+// Function to update the user's profile photo across all pages
+function updateProfilePhoto() {
+  const profilePhotoElements = document.querySelectorAll('.bg-center.bg-no-repeat.bg-cover');
+  const savedImage = localStorage.getItem('profileImage');
+
+  if (savedImage && profilePhotoElements.length > 0) {
+      profilePhotoElements.forEach(element => {
+          element.style.backgroundImage = `url('${savedImage}')`;
+      });
+  }
+}
+
+// Function to save a new profile photo and update it across all pages
+function saveNewProfilePhoto(photoInput) {
+  if (photoInput) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+          const newImageUrl = e.target.result;
+          localStorage.setItem('profileImage', newImageUrl);
+          updateProfilePhoto();  // Update the photo immediately after saving
+      };
+      reader.readAsDataURL(photoInput);
+  }
+}
+
+// Function to update the username
+function updateProfileName() {
+  const savedName = localStorage.getItem('profileName');
+  if (savedName) {
+      document.getElementById('profileName').textContent = savedName;
+  }
+}
+
 // Load saved profile data from localStorage when the page loads
 window.onload = function() {
-    const savedName = localStorage.getItem('profileName');
-    const savedImage = localStorage.getItem('profileImage');
-
-    if (savedName) {
-        document.getElementById('profileName').textContent = savedName;
-    }
-
-    if (savedImage) {
-        document.getElementById('profileImage').style.backgroundImage = `url('${savedImage}')`;
-    }
+  updateProfileName();
+  updateProfilePhoto();
 };
 
+// Handle profile changes
 document.getElementById('changeProfileBtn').addEventListener('click', function() {
-    document.getElementById('profileModal').classList.remove('hidden');
+  document.getElementById('profileModal').classList.remove('hidden');
 });
 
 document.getElementById('cancelBtn').addEventListener('click', function() {
-    document.getElementById('profileModal').classList.add('hidden');
+  document.getElementById('profileModal').classList.add('hidden');
 });
 
 document.getElementById('saveBtn').addEventListener('click', function() {
-    const nameInput = document.getElementById('nameInput').value;
-    const photoInput = document.getElementById('photoInput').files[0];
+  const nameInput = document.getElementById('nameInput').value;
+  const photoInput = document.getElementById('photoInput').files[0];
 
-    if (nameInput) {
-        document.getElementById('profileName').textContent = nameInput;
-        localStorage.setItem('profileName', nameInput); // Save the name to localStorage
-    }
+  if (nameInput) {
+      document.getElementById('profileName').textContent = nameInput;
+      localStorage.setItem('profileName', nameInput); // Save the name to localStorage
+  }
 
-    if (photoInput) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const imageUrl = e.target.result;
-            document.getElementById('profileImage').style.backgroundImage = `url('${imageUrl}')`;
-            localStorage.setItem('profileImage', imageUrl); // Save the image URL to localStorage
-        };
-        reader.readAsDataURL(photoInput);
-    }
+  if (photoInput) {
+      saveNewProfilePhoto(photoInput);
+  }
 
-    document.getElementById('profileModal').classList.add('hidden');
+  document.getElementById('profileModal').classList.add('hidden');
 });
-
-// Function to toggle the dropdown menu
-
-// Select the elements
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const profileModal = document.getElementById('profileModal');
-        const openModalButton = document.getElementById('changeProfileBtn');
-        const closeModalButton = document.getElementById('cancelBtn');
-        const saveModalButton = document.getElementById('saveBtn');
-
-        openModalButton.addEventListener('click', function () {
-            profileModal.classList.remove('hidden');
-            profileModal.setAttribute('aria-hidden', 'false');
-        });
-
-        closeModalButton.addEventListener('click', function () {
-            profileModal.classList.add('hidden');
-            profileModal.setAttribute('aria-hidden', 'true');
-        });
-
-        saveModalButton.addEventListener('click', function () {
-            // Add save functionality here
-            profileModal.classList.add('hidden');
-            profileModal.setAttribute('aria-hidden', 'true');
-        });
-    });
-
-
 
 
 // Extend the base functionality of JavaScript

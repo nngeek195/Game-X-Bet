@@ -74,67 +74,75 @@
                             definitly reply you withing 10 minutes</p>
                     </div>
 
-                    <form action="#" method="POST"
+                    <form id="form1"
                         class="mx-auto mt-16 max-w-xl sm:mt-20">
                         <!-- Highlighted Section -->
                         <div class="highlighted-section">
 
-                            <form action="#" method="POST">
+                            <form
+                                class="mx-auto mt-16 max-w-xl sm:mt-20">
                                 <div class="grid-container">
                                     <div>
-                                        <label for="first-name"
-                                            class="label">First name</label>
-                                        <input type="text" name="first-name"
+                                        <label for="Name"
+                                            class="label">Name</label>
+                                        <input type="text" name="firstName"
                                             id="first-name"
                                             autocomplete="given-name"
-                                            class="input">
+                                            class="input" required>
                                     </div>
+
                                     <div>
-                                        <label for="last-name"
-                                            class="label">Last name</label>
-                                        <input type="text" name="last-name"
-                                            id="last-name"
-                                            autocomplete="family-name"
-                                            class="input">
-                                    </div>
-                                    <div>
-                                        <label for="company"
-                                            class="label">Enter your
-                                            comment</label>
-                                        <input type="text" name="company"
-                                            id="company"
+                                        <label for="comment" class="label">Enter
+                                            your comment</label>
+                                        <input type="text" name="comment"
+                                            id="comment"
                                             autocomplete="organization"
-                                            class="input">
+                                            class="input" required>
                                     </div>
                                     <div>
                                         <label for="email"
                                             class="label">Email</label>
                                         <input type="email" name="email"
                                             id="email" autocomplete="email"
-                                            class="input">
+                                            class="input" required>
                                     </div>
                                     <div>
                                         <label for="phone-number"
                                             class="label">Phone number</label>
-                                        <input type="tel" name="phone-number"
+                                        <input type="tel" name="phoneNumber"
                                             id="phone-number"
                                             autocomplete="tel-extension"
-                                            class="input">
+                                            class="input" required>
                                     </div>
                                 </div>
-                                <button type="submit"
+                                <button type="submit" id="submit1"
                                     class="submit-button">Submit</button>
                             </form>
+
                         </div>
-                        <footer
-                            class="border-t border-solid border-t-[#243647] px-10 py-3">
-                            <p class="text-[#93adc8]">© 2024
-                                GameXBet</p>
-                        </footer>
-                        <script src="scripts.js"></script>
+                        <div id="openpopup">
+                            <div class="data-saved-successfully">
+                                <svg class="checkmark"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="25" fill="none"
+                                        stroke-width="4" stroke="#fff" />
+                                    <path fill="none" stroke="#fff"
+                                        stroke-width="4" stroke-linecap="round"
+                                        d="M14 27 l10 8 l15 -15" />
+                                </svg>
+                                <span class="message">Your data has been saved
+                                    successfully!</span>
+                            </div>
+                        </div>
+
                     </div>
+                    <footer
+                        class="border-t border-solid border-t-[#243647] px-10 py-3">
+                        <p class="text-[#fff]">© 2024
+                            Game<span class="highlight">X</span>Bet</p>
+                    </footer>
+                    <script src="scripts.js"></script>
 
-                </div>
-
-            </body>
-        </html>
+                </body>
+            </html>
